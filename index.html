@@ -17,7 +17,7 @@ body{background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;font
 .world-bg svg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(900px,95vw);opacity:.07;}
 
 nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;
-  justify-content:space-between;background:rgba(13,17,23,.8);backdrop-filter:blur(20px);
+  justify-content:space-between;background:rgba(13,17,23,.85);backdrop-filter:blur(20px);
   border:1px solid rgba(200,150,12,.2);border-radius:100px;padding:10px 14px;width:min(820px,92vw);}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;letter-spacing:.04em;color:var(--white);
   text-decoration:none;padding:4px 14px;display:flex;align-items:center;gap:8px;}
@@ -27,8 +27,7 @@ nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;disp
 .nav-links a{font-size:.78rem;color:var(--muted);text-decoration:none;padding:7px 16px;border-radius:100px;transition:color .25s,background .25s;}
 .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,.07);}
 .nav-cta{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:600;color:#000;text-decoration:none;
-  background:linear-gradient(135deg,var(--gold),var(--gold-lt));padding:9px 22px;border-radius:100px;
-  display:flex;align-items:center;gap:6px;transition:opacity .2s;white-space:nowrap;}
+  background:linear-gradient(135deg,var(--gold),var(--gold-lt));padding:9px 22px;border-radius:100px;transition:opacity .2s;white-space:nowrap;}
 .nav-cta:hover{opacity:.85;}
 
 #hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;
@@ -70,8 +69,7 @@ nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;disp
 .card-body{padding:22px;display:grid;grid-template-columns:150px 1fr 1fr;gap:18px;}
 .card-sidebar{border-right:1px solid rgba(255,255,255,.05);padding-right:14px;display:flex;flex-direction:column;gap:6px;}
 .si{font-size:.72rem;color:var(--muted);padding:8px 12px;border-radius:8px;cursor:default;}
-.si.active{background:linear-gradient(135deg,rgba(200,150,12,.2),rgba(200,150,12,.08));
-  color:var(--gold-lt);border:1px solid rgba(200,150,12,.25);}
+.si.active{background:linear-gradient(135deg,rgba(200,150,12,.2),rgba(200,150,12,.08));color:var(--gold-lt);border:1px solid rgba(200,150,12,.25);}
 .col-head{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;color:var(--white);margin-bottom:14px;}
 .stat-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px;margin-bottom:10px;}
 .stat-lbl{font-size:.63rem;color:var(--muted);margin-bottom:4px;letter-spacing:.05em;}
@@ -79,8 +77,7 @@ nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;disp
 .up{color:#4ade80;font-size:.65rem;font-weight:400;margin-left:6px;}
 .proj-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.72rem;}
 .proj-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:10px;flex-shrink:0;}
-.proj-name{color:var(--white);flex:1;}
-.proj-type{color:var(--muted);font-size:.65rem;}
+.proj-name{color:var(--white);flex:1;}.proj-type{color:var(--muted);font-size:.65rem;}
 
 .sec-wrap{position:relative;z-index:1;padding:100px 40px;max-width:1100px;margin:0 auto;}
 .sec-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(200,150,12,.08);
@@ -95,31 +92,46 @@ nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;disp
   border-radius:16px;overflow:hidden;position:relative;box-shadow:0 0 60px rgba(200,150,12,.07),0 40px 80px rgba(0,0,0,.4);}
 .reel-frame iframe{width:100%;height:100%;border:none;display:block;}
 
+/* WORK GRID */
 .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;}
 .work-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;
-  overflow:hidden;text-decoration:none;display:block;transition:border-color .3s,transform .3s,box-shadow .3s;}
-.work-card:hover{border-color:rgba(200,150,12,.45);transform:translateY(-4px);
-  box-shadow:0 0 40px rgba(200,150,12,.1),0 20px 40px rgba(0,0,0,.3);}
+  overflow:hidden;text-decoration:none;display:block;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;}
+.work-card:hover{border-color:rgba(200,150,12,.5);transform:translateY(-4px);box-shadow:0 0 40px rgba(200,150,12,.15),0 20px 40px rgba(0,0,0,.4);}
 .work-card:nth-child(1){grid-column:span 7;}
 .work-card:nth-child(2){grid-column:span 5;}
 .work-card:nth-child(3){grid-column:span 4;}
 .work-card:nth-child(4){grid-column:span 4;}
 .work-card:nth-child(5){grid-column:span 4;}
-.work-thumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.work-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .4s ease;}
-.work-card:hover .work-thumb img{transform:scale(1.05);}
-.work-thumb-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,150,12,.08) 0%,transparent 70%);z-index:1;}
-.work-play{width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,150,12,.35);
-  display:flex;align-items:center;justify-content:center;position:relative;z-index:2;transition:border-color .3s,background .3s;}
-.work-play::after{content:'';width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;
-  border-left:14px solid rgba(200,150,12,.6);margin-left:4px;}
-.work-card:hover .work-play{border-color:var(--gold);background:rgba(200,150,12,.15);}
-.work-card:hover .work-play::after{border-left-color:var(--gold-lt);}
-.work-info{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;}
+
+.work-thumb{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;display:block;background:#111;}
+.work-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .5s ease,opacity .4s ease;}
+.work-card:hover .work-thumb img{transform:scale(1.06);}
+
+/* iframe preview sits above thumbnail */
+.work-thumb iframe{position:absolute;inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);
+  border:none;z-index:2;opacity:0;pointer-events:none;transition:opacity .5s ease;}
+.work-thumb iframe.active{opacity:1;}
+
+/* dark overlay fades out on hover */
+.work-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(8,11,15,.7) 0%,transparent 50%);
+  transition:opacity .3s;}
+.work-card:hover .work-overlay{opacity:0;}
+
+/* play button */
+.work-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;
+  width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,150,12,.5);
+  display:flex;align-items:center;justify-content:center;transition:opacity .3s,border-color .3s,background .3s;
+  background:rgba(8,11,15,.4);backdrop-filter:blur(4px);}
+.work-play::after{content:'';width:0;height:0;border-top:8px solid transparent;
+  border-bottom:8px solid transparent;border-left:14px solid rgba(232,184,48,.9);margin-left:4px;}
+.work-card:hover .work-play{opacity:0;}
+
+.work-info{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5;}
 .work-name{font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;color:var(--white);}
 .work-type{font-size:.62rem;color:var(--gold);background:rgba(200,150,12,.1);
   border:1px solid rgba(200,150,12,.2);border-radius:100px;padding:3px 12px;letter-spacing:.06em;}
 
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;}
 .skills-list2{list-style:none;margin-top:8px;}
 .skill-row{display:flex;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05);gap:16px;}
@@ -130,22 +142,11 @@ nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:200;disp
 .skill-pct{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:var(--gold);width:34px;text-align:right;}
 .tools-grid2{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
 .tool-chip{font-size:.72rem;font-weight:500;color:var(--muted);background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:7px 18px;
-  transition:border-color .25s,color .25s,background .25s;}
+  border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:7px 18px;transition:border-color .25s,color .25s,background .25s;}
 .tool-chip:hover{border-color:rgba(200,150,12,.4);color:var(--gold-lt);background:rgba(200,150,12,.07);}
 
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.about-img-wrap{position:relative;}
-.about-img-card{background:rgba(13,17,23,.9);border:1px solid rgba(200,150,12,.18);border-radius:20px;
-  overflow:hidden;aspect-ratio:4/5;position:relative;box-shadow:0 0 60px rgba(200,150,12,.06);
-  display:flex;align-items:center;justify-content:center;}
-.about-img-card::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(200,150,12,.07) 0%,transparent 65%);}
-.about-img-label{position:relative;z-index:1;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(200,150,12,.4);}
-.about-glow-card{position:absolute;bottom:-20px;right:-20px;background:rgba(13,17,23,.95);backdrop-filter:blur(20px);
-  border:1px solid rgba(200,150,12,.2);border-radius:14px;padding:16px 20px;min-width:160px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
-.gc-val{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--gold-lt);}
-.gc-lbl{font-size:.65rem;color:var(--muted);margin-top:2px;}
+/* ABOUT */
+.about-single{max-width:680px;}
 .about-desc{font-size:.9rem;line-height:1.8;color:var(--muted);margin-bottom:14px;}
 .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;}
 .stat-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;padding:18px 16px;text-align:center;}
@@ -188,11 +189,10 @@ footer span{font-size:.7rem;color:var(--muted);letter-spacing:.06em;}
 @media(max-width:768px){
   nav{width:94vw;padding:9px 10px;}.nav-links{display:none;}
   .sec-wrap{padding:70px 24px;}
-  .skills-grid,.about-grid{grid-template-columns:1fr;gap:48px;}
+  .skills-grid{grid-template-columns:1fr;gap:48px;}
   .work-card:nth-child(n){grid-column:span 12;}
   .card-body{grid-template-columns:1fr;}
   .card-sidebar{border-right:none;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:12px;flex-direction:row;flex-wrap:wrap;}
-  .about-glow-card{display:none;}
   #hero{padding:100px 24px 50px;}
 }
 </style>
@@ -281,41 +281,52 @@ footer span{font-size:.7rem;color:var(--muted);letter-spacing:.06em;}
   <div class="sec-pill reveal">Selected Work</div>
   <h2 class="sec-title reveal">Projects &amp; <span>Films</span></h2>
   <div class="work-grid reveal">
-    <a class="work-card" href="https://youtu.be/OCyTa2-Xr-Q" target="_blank">
+
+    <a class="work-card" href="https://youtu.be/OCyTa2-Xr-Q" target="_blank" data-vid="OCyTa2-Xr-Q">
       <div class="work-thumb">
-        <img src="https://img.youtube.com/vi/OCyTa2-Xr-Q/maxresdefault.jpg" alt="Motion GFX"/>
-        <div class="work-thumb-glow"></div><div class="work-play"></div>
+        <img src="https://img.youtube.com/vi/OCyTa2-Xr-Q/hqdefault.jpg" alt="Motion GFX" onerror="this.src='https://img.youtube.com/vi/OCyTa2-Xr-Q/mqdefault.jpg'"/>
+        <div class="work-overlay"></div>
+        <div class="work-play"></div>
       </div>
       <div class="work-info"><span class="work-name">Motion GFX</span><span class="work-type">Motion GFX</span></div>
     </a>
-    <a class="work-card" href="https://youtu.be/hxA88-15d48" target="_blank">
+
+    <a class="work-card" href="https://youtu.be/hxA88-15d48" target="_blank" data-vid="hxA88-15d48">
       <div class="work-thumb">
-        <img src="https://img.youtube.com/vi/hxA88-15d48/maxresdefault.jpg" alt="Event Recap"/>
-        <div class="work-thumb-glow"></div><div class="work-play"></div>
+        <img src="https://img.youtube.com/vi/hxA88-15d48/hqdefault.jpg" alt="Event Recap" onerror="this.src='https://img.youtube.com/vi/hxA88-15d48/mqdefault.jpg'"/>
+        <div class="work-overlay"></div>
+        <div class="work-play"></div>
       </div>
       <div class="work-info"><span class="work-name">Event Recap</span><span class="work-type">Event Recap</span></div>
     </a>
-    <a class="work-card" href="https://youtu.be/smErzjullWE" target="_blank">
+
+    <a class="work-card" href="https://youtu.be/smErzjullWE" target="_blank" data-vid="smErzjullWE">
       <div class="work-thumb">
-        <img src="https://img.youtube.com/vi/smErzjullWE/maxresdefault.jpg" alt="Social Content"/>
-        <div class="work-thumb-glow"></div><div class="work-play"></div>
+        <img src="https://img.youtube.com/vi/smErzjullWE/hqdefault.jpg" alt="Social Content" onerror="this.src='https://img.youtube.com/vi/smErzjullWE/mqdefault.jpg'"/>
+        <div class="work-overlay"></div>
+        <div class="work-play"></div>
       </div>
       <div class="work-info"><span class="work-name">Social Content</span><span class="work-type">Social Content</span></div>
     </a>
-    <a class="work-card" href="https://youtu.be/jsPFP2aKUyY" target="_blank">
+
+    <a class="work-card" href="https://youtu.be/jsPFP2aKUyY" target="_blank" data-vid="jsPFP2aKUyY">
       <div class="work-thumb">
-        <img src="https://img.youtube.com/vi/jsPFP2aKUyY/maxresdefault.jpg" alt="Music Video"/>
-        <div class="work-thumb-glow"></div><div class="work-play"></div>
+        <img src="https://img.youtube.com/vi/jsPFP2aKUyY/hqdefault.jpg" alt="Music Video" onerror="this.src='https://img.youtube.com/vi/jsPFP2aKUyY/mqdefault.jpg'"/>
+        <div class="work-overlay"></div>
+        <div class="work-play"></div>
       </div>
       <div class="work-info"><span class="work-name">Music Video</span><span class="work-type">Music Video</span></div>
     </a>
-    <a class="work-card" href="https://youtu.be/EWhYqwH4vcw" target="_blank">
+
+    <a class="work-card" href="https://youtu.be/EWhYqwH4vcw" target="_blank" data-vid="EWhYqwH4vcw">
       <div class="work-thumb">
-        <img src="https://img.youtube.com/vi/EWhYqwH4vcw/maxresdefault.jpg" alt="Documentary"/>
-        <div class="work-thumb-glow"></div><div class="work-play"></div>
+        <img src="https://img.youtube.com/vi/EWhYqwH4vcw/hqdefault.jpg" alt="Documentary" onerror="this.src='https://img.youtube.com/vi/EWhYqwH4vcw/mqdefault.jpg'"/>
+        <div class="work-overlay"></div>
+        <div class="work-play"></div>
       </div>
       <div class="work-info"><span class="work-name">Documentary</span><span class="work-type">Documentary</span></div>
     </a>
+
   </div>
 </section>
 
@@ -351,22 +362,16 @@ footer span{font-size:.7rem;color:var(--muted);letter-spacing:.06em;}
 </section>
 
 <section class="sec-wrap" id="about" style="padding-top:0">
-  <div class="about-grid">
-    <div class="about-img-wrap reveal">
-      <div class="about-img-card"><div class="about-img-label">Your Photo Here</div></div>
-      <div class="about-glow-card"><div class="gc-val">40+</div><div class="gc-lbl">Projects Delivered</div></div>
-    </div>
-    <div class="reveal">
+  <div class="about-single reveal">
       <div class="sec-pill">About Me</div>
       <h2 class="sec-title">The Story Behind<br>the <span>Reel</span></h2>
       <p class="about-desc">Self-taught and driven by craft, I have spent years building a design language that is equal parts precision and instinct. From brand films to motion graphics, I focus on work that moves people literally and figuratively.</p>
-      <p class="about-desc">Currently building something new with Bloc Fabrique, a production and media company that takes creative work seriously.</p>
+      <p class="about-desc">Currently building something new with Block Productions, a production and media company that takes creative work seriously.</p>
       <div class="about-stats">
         <div class="stat-card"><div class="sc-val">5+</div><div class="sc-lbl">Years Experience</div></div>
         <div class="stat-card"><div class="sc-val">40+</div><div class="sc-lbl">Projects Done</div></div>
         <div class="stat-card"><div class="sc-val">3</div><div class="sc-lbl">Disciplines</div></div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -391,11 +396,12 @@ footer span{font-size:.7rem;color:var(--muted);letter-spacing:.06em;}
 
 <footer>
   <span>2025 Mrfortynine - Motion Design and Video Editing</span>
-  <span>Bloc Fabrique</span>
+  <span>Block Productions</span>
 </footer>
 
 <script>
-const ro = new IntersectionObserver(function(entries) {
+// Scroll reveal
+var ro = new IntersectionObserver(function(entries) {
   entries.forEach(function(e, i) {
     if (e.isIntersecting) {
       setTimeout(function() { e.target.classList.add('visible'); }, i * 100);
@@ -405,6 +411,7 @@ const ro = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(function(r) { ro.observe(r); });
 
+// Skill bars
 var sl = document.getElementById('skillList');
 if (sl) {
   new IntersectionObserver(function(entries) {
@@ -419,6 +426,7 @@ if (sl) {
   }, { threshold: 0.3 }).observe(sl);
 }
 
+// Active nav
 var sections = document.querySelectorAll('section[id]');
 var navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', function() {
@@ -427,6 +435,40 @@ window.addEventListener('scroll', function() {
   navLinks.forEach(function(a) {
     a.classList.remove('active');
     if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+  });
+});
+
+// Video hover preview
+var timers = {};
+document.querySelectorAll('.work-card').forEach(function(card) {
+  var vid = card.getAttribute('data-vid');
+  if (!vid) return;
+  var thumb = card.querySelector('.work-thumb');
+
+  card.addEventListener('mouseenter', function() {
+    timers[vid] = setTimeout(function() {
+      if (thumb.querySelector('iframe')) return;
+      var f = document.createElement('iframe');
+      f.setAttribute('allow', 'autoplay; encrypted-media');
+      f.setAttribute('allowfullscreen', '');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + vid + '?autoplay=1&mute=1&controls=0&loop=1&playlist=' + vid + '&rel=0&modestbranding=1';
+      thumb.appendChild(f);
+      setTimeout(function() { f.classList.add('active'); }, 80);
+    }, 700);
+  });
+
+  card.addEventListener('mouseleave', function() {
+    clearTimeout(timers[vid]);
+    var f = thumb.querySelector('iframe');
+    if (f) {
+      f.classList.remove('active');
+      setTimeout(function() { if (f.parentNode) f.parentNode.removeChild(f); }, 500);
+    }
+  });
+
+  card.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('https://youtu.be/' + vid, '_blank');
   });
 });
 </script>
